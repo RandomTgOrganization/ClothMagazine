@@ -16,9 +16,11 @@ function Navbar() {
           Тестовый Магазин
         </a>
 
+        <a href='#'>
         <div className={styles.cash}>
           <FaShoppingCart className={styles.cartIcon} /> Корзина
         </div>
+        </a>
         
         <ul className={styles.navbar_links}>
 

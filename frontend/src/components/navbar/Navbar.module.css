@@ -30,6 +30,7 @@
     text-decoration: none;
     color: white;
     font-weight: bold;
+
   }
   
   .navbar_link:hover {
@@ -51,3 +52,29 @@
     border-color: #007bff;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   }
+
+  .cartIcon {
+    margin-right: 5px; /* Добавляем немного отступа справа от иконки */
+    vertical-align: middle; /* Выравниваем иконку по вертикали с текстом */
+    margin-left: 200px;
+  }
+
+
+  li {
+    font-size: 16px;
+  }
+
+
+
+  .cash {
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    margin-left: 250px;
+
+  }
+
+
+ 

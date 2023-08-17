@@ -1,0 +1,13 @@
+.custom-tooltip {
+    background-color: white;
+    color: black;
+    padding: 300px;
+    border: 1px solid #ccc;
+    border-radius: 200px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Убираем стандартные стили react-tooltip */
+  .react-tooltip {
+    font-size: 44; /* Сбрасываем размер шрифта */
+  }

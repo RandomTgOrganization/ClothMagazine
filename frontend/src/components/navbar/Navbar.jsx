@@ -1,12 +1,25 @@
 import styles from './Navbar.module.css';
+import { FaShoppingCart } from 'react-icons/fa';
+
+
+
+
+
+
 
 function Navbar() {
   return (
     <div>
       <nav className={styles.navbar}>
+
         <a href="/" className={styles.navbar_brand}>
           Тестовый Магазин
         </a>
+
+        <div className={styles.cash}>
+          <FaShoppingCart className={styles.cartIcon} /> Корзина
+        </div>
+        
         <ul className={styles.navbar_links}>
 
         <li>
@@ -19,14 +32,21 @@ function Navbar() {
               Главная
             </a>
           </li>
+
           <li>
             <a href="#" className={styles.navbar_link}>
-              Продукты
+              Войти
+            </a>
+          </li>
+
+          <li>
+            <a href="#" className={styles.navbar_link}>
+              Регистрация
             </a>
           </li>
           <li>
             <a href="#" className={styles.navbar_link}>
-              Войти
+              Корзина
             </a>
           </li>
         </ul>

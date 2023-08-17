@@ -1,0 +1,53 @@
+/* Navbar.module.css */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 98%;
+    background-color: #433f3f;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 100;
+  }
+  
+  .navbar_brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .navbar_links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar_link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .navbar_link:hover {
+    color: lightgray;
+  }
+  
+
+  .search_input {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 200px; /* Укажите желаемую ширину */
+    transition: border-color 0.2s ease-in-out;
+  }
+  
+  .search_input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }

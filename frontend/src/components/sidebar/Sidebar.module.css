@@ -1,0 +1,38 @@
+.sidebar {
+    width: 15%;
+    background-color: white;
+    position: fixed;
+    top: 40px; /* Учитывает высоту навбара */
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+    border-right: 1px solid #ccc;
+    padding-top: 10px;
+  }
+  
+  .sidebar a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .sidebar a:hover {
+    background-color: #f2f2f2;
+  }
+  
+
+
+  .sidebar .language {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #999;
+  }
+
+
+.sidebar .topBrands {
+    color: rgb(205, 15, 40);
+}
+  

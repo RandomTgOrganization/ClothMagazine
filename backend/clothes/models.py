@@ -11,8 +11,10 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
-    subcategory = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, related_name='subcat')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True,
+                                 limit_choices_to={'parent__isnull': True})
+    subcategory = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, related_name='subcat',
+                                    limit_choices_to={'parent__isnull': False})
     name = models.CharField(max_length=200)
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)

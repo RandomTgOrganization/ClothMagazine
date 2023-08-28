@@ -10,6 +10,8 @@ from .serializers import ProductSerializer
 # Create your views here.
 
 class ProductAPIView(APIView):
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializer
+    def get(self, request):
+        clothes = Product.objects.all()
+        serializer = ProductSerializer
+        return Response({'clothes': serializer(clothes, many=True).data})
 

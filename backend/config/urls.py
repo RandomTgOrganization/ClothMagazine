@@ -21,5 +21,5 @@ from clothes.views import ProductAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/productlist', ProductAPIView.as_view())
+    path('api/v1/clothes_list', ProductAPIView.as_view())
 ]

@@ -27,19 +27,16 @@ INSTALLED_APPS = [
 
     ## main modules
     'rest_framework',
+    'corsheaders',
 
     ## apps
     'clothes.apps.ClothesConfig',
     'user.apps.UserConfig',
 ]
 
-
-
-
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # TODO: Add cors header middleware
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -47,6 +44,19 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ALLOWED_ORIGINS = [
+#TODO сюда
+]
+
+
+#TODO если нужно будет
+
+# CORS_ALLOW_METHODS = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS']
+# CORS_ALLOW_HEADERS = ['content-type', 'authorization']
+# CORS_ALLOW_CREDENTIALS = True
+# CORS_EXPOSE_HEADERS = ['custom-header']
+# ...
 
 ROOT_URLCONF = 'config.urls'
 

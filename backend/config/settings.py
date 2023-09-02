@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     ## apps
     'clothes.apps.ClothesConfig',
     'user.apps.UserConfig',
+    'drf_yasg'
 ]
 
 MIDDLEWARE = [

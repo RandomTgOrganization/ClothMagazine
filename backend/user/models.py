@@ -1,12 +1,36 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
-# Create your models here.
-class User(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
-    profile_picture = models.ImageField(upload_to='profile_pics/', blank=True)
-    bio = models.TextField(max_length=500, blank=True)
+class UserProfile (models.Model):
 
-    def __str__(self):
-        return self.user
+    username = models.CharField(max_length=30,unique=True,null=True)
+    avatar = models.ImageField(blank=True,null=True)
+    name = models.CharField(max_length=40,blank=True,null=True)
+    family = models.CharField(max_length=40,blank=True,null=True)
+    bio = models.TextField(blank=True,null=True)
+    age = models.IntegerField(blank=True,null=True)
+    date_birthday = models.DateTimeField(blank=True,null=True)
+
+    def __str__(self) -> str:
+        return f'{self.username}'
+
+
+
+class User(AbstractUser):
+    
+    email = models.EmailField(unique=True)
+    is_verified = models.BooleanField(default=False)
+    refresh_token = models.CharField(default=None,max_length=300,null=True,blank=True)
+    username = models.CharField(max_length=30,unique=True)
+    user_profile = models.OneToOneField(UserProfile, related_name='mainUser', on_delete=models.CASCADE, null=True)
+
+
+    class Meta:
+        ordering = ["-date_joined"]
+
+
+
+    def __str__(self) -> str:
+        return f'{self.email}'
+    

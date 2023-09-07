@@ -1,5 +1,9 @@
+import { useSelector } from 'react-redux';
 import styles from './Navbar.module.css';
 import { FaShoppingCart } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { authActions } from '../../store/slices/authSlice';
 
 
 
@@ -8,6 +12,22 @@ import { FaShoppingCart } from 'react-icons/fa';
 
 
 function Navbar() {
+
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const {user}  = useSelector(state => state.auth)
+
+
+  const handleLogout = () => {
+    
+    dispatch(authActions.logout())
+    navigate('/');
+};
+
+
+
+
   return (
     <div>
       <nav className={styles.navbar}>
@@ -30,13 +50,13 @@ function Navbar() {
           </li>
 
           <li>
-            <a href="#" className={styles.navbar_link}>
+            <a href="/" className={styles.navbar_link}>
               Главная
             </a>
           </li>
 
-          <li>
-            <a href="#" className={styles.navbar_link}>
+          {!user ? (<div><li>
+            <a href="/login" className={styles.navbar_link}>
               Войти
             </a>
           </li>
@@ -46,11 +66,11 @@ function Navbar() {
               Регистрация
             </a>
           </li>
-          <li>
-            <a href="#" className={styles.navbar_link}>
-              Корзина
-            </a>
-          </li>
+          </div>) : ( <li><button onClick={handleLogout} >Выход</button></li>
+) }
+
+
+
         </ul>
       </nav>
     </div>

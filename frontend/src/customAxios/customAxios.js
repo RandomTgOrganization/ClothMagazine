@@ -6,7 +6,7 @@ import axios from 'axios';
 let isRefreshing = false
 
 
-export const API_URL = 'http://localhost:8000/api'
+export const API_URL = 'http://localhost:8000/api/v1/user/'
 
 
 
@@ -15,6 +15,8 @@ export const $regApi = axios.create({
     withCredentials:true,
 
   });
+
+
 
 export const $Api = axios.create({
     baseURL: API_URL,

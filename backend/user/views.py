@@ -4,11 +4,40 @@ from rest_framework import status
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import (TokenObtainPairView,
                                             TokenRefreshView)
-# Create your views here.
+from .serializers import RegistrationSerializer
+from .tokenUtils import AllTokensUtils
+from rest_framework.validators import ValidationError
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 
 
 
+class RegistrationApiView(APIView):
+
+    def post(self, request):
+
+        serializer = RegistrationSerializer(data=request.data)
+
+        print(request.data)
+
+        try:
+
+            if serializer.is_valid(raise_exception=True):
+
+                user = serializer.save()
+                responseData = AllTokensUtils.accessRefreshForUser(user=user,data=serializer.data)
+
+
+                
+                response = Response(responseData['data'],status=status.HTTP_200_OK)
+                response.set_cookie('refreshToken', responseData['refreshToken'], httponly=True, max_age=2592000)
+
+                return response
+
+        except ValidationError :
+            print(serializer._errors)
+            return Response({'errors': serializer._errors},status=status.HTTP_400_BAD_REQUEST)
 
 
 

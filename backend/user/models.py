@@ -16,14 +16,13 @@ class UserProfile (models.Model):
         return f'{self.username}'
 
 
-
 class User(AbstractUser):
     
     email = models.EmailField(unique=True)
     is_verified = models.BooleanField(default=False)
     refresh_token = models.CharField(default=None,max_length=300,null=True,blank=True)
     username = models.CharField(max_length=30,unique=True)
-    user_profile = models.OneToOneField(UserProfile, related_name='mainUser', on_delete=models.CASCADE, null=True)
+    user_profile = models.OneToOneField(UserProfile, related_name='user', on_delete=models.CASCADE, null=True)
 
 
     class Meta:
@@ -33,4 +32,3 @@ class User(AbstractUser):
 
     def __str__(self) -> str:
         return f'{self.email}'
-    

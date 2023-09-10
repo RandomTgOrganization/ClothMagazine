@@ -62,7 +62,7 @@ function Navbar() {
           </li>
 
           <li>
-            <a href="#" className={styles.navbar_link}>
+            <a href="/register" className={styles.navbar_link}>
               Регистрация
             </a>
           </li>

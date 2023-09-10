@@ -12,8 +12,6 @@ export const API_URL = 'http://localhost:8000/api/v1/user/'
 
 export const $regApi = axios.create({
     baseURL: API_URL,
-    withCredentials:true,
-
   });
 
 

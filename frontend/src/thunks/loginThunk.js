@@ -3,7 +3,7 @@ import { $Api } from "../customAxios/customAxios";
 
 
 
-export const loginThunk = createAsyncThunk('/login',async (loginData, {rejectWithValue}) => {
+export const loginThunk = createAsyncThunk('user/login/',async (loginData, {rejectWithValue}) => {
 
 
     try {

@@ -6,9 +6,6 @@ from rest_framework.generics import GenericAPIView
 from .models import Product
 from .serializers import ProductSerializer
 
-
-# Create your views here.
-
 class ProductAPIView(GenericAPIView):
     serializer_class = ProductSerializer
 

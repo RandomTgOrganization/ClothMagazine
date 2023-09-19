@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 
     ## apps
     'clothes.apps.ClothesConfig',
+    'busket.apps.BusketConfig',
     'user.apps.UserConfig',
     'drf_yasg'
 ]

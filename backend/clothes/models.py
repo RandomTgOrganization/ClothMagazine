@@ -25,6 +25,7 @@ class Product(models.Model):
     compound = models.TextField(default="Неизвестно")
     color = models.CharField(max_length=50, default="Неизвестно")
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE, null=True)
+    is_in_busket = models.BooleanField(default=False)
     is_published = models.BooleanField(default=True, verbose_name='Опубликовано')
 
     def __str__(self):

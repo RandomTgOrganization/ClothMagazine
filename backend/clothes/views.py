@@ -6,9 +6,8 @@ from rest_framework.generics import GenericAPIView
 from .models import Product
 from .serializers import ProductSerializer
 
-class ProductAPIView(GenericAPIView):
-    serializer_class = ProductSerializer
 
+class ProductAPIView(GenericAPIView):
     def get(self, request):
         clothes = Product.objects.all()
         serializer = ProductSerializer
